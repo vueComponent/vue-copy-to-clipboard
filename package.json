@@ -1,0 +1,23 @@
+{
+  "name": "vue-copy-to-clipboard",
+  "version": "1.0.0",
+  "description": "Copy to clipboard Vue component",
+  "main": "index.js",
+  "repository": "https://github.com/vueComponent/vue-copy-to-clipboard",
+  "author": "Sendya <18x@loacg.com>",
+  "contributors": [
+    "Sendya <18x@loacg.com>"
+  ],
+  "license": "MIT",
+  "files": [
+    "es",
+    "lib",
+    "index.js"
+  ],
+  "peerDependencies": {
+    "vue": ">=2.6.0"
+  },
+  "dependencies": {
+    "copy-to-clipboard": "^3.3.1"
+  }
+}
