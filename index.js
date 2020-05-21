@@ -1,24 +1,31 @@
-import copy from 'copy-to-clipboard'
+import copy from 'copy-to-clipboard';
 
-export const CopyToClipboardProps = {
+export var CopyToClipboardProps = {
   text: {
     type: String,
     required: true
   },
   options: {
     type: Object,
-    default: () => {}
+    'default': function _default() {
+      return null;
+    }
   }
-}
+};
 
-const CopyToClipboard = {
+var CopyToClipboard = {
   name: 'VueCopyToClipboard',
   functional: true,
   props: CopyToClipboardProps,
-  render (h, ctx) {
-    const { props: { text, options = {} }, listeners: { copy: onCopy } } = ctx
+  render: function (h, ctx) {
+    var props = ctx.props,
+        listeners = ctx.listeners,
+        children = ctx.children;
+    var text = props.text,
+        options = props.options || {};
+    var onCopy = listeners.copy
 
-    const handleClick = (e) => {
+    function handleClick(e) {
       // Bypass onClick if it was present
       e.preventDefault()
       e.stopPropagation()
@@ -30,13 +37,13 @@ const CopyToClipboard = {
       }
     }
 
-    return h('span', { on: { click: handleClick }}, ctx.children)
+    return h('span', { on: { 'click': handleClick }}, children);
   }
-}
+};
 
 /* istanbul ignore next */
 CopyToClipboard.install = function (Vue) {
   Vue.component(CopyToClipboard.name, CopyToClipboard)
-}
+};
 
-export default CopyToClipboard
+export default CopyToClipboard;
