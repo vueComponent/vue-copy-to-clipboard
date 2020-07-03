@@ -1,6 +1,6 @@
 import copy from 'copy-to-clipboard';
 
-export var CopyToClipboardProps = {
+var CopyToClipboardProps = {
   text: {
     type: String,
     required: true

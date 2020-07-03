@@ -1,6 +1,6 @@
 {
   "name": "vue-copy-to-clipboard",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Copy to clipboard Vue component",
   "main": "index.js",
   "repository": "https://github.com/vueComponent/vue-copy-to-clipboard",
