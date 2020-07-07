@@ -1,6 +1,6 @@
 import copy from 'copy-to-clipboard';
 
-export var CopyToClipboardProps = {
+const CopyToClipboardProps = {
   text: {
     type: String,
     required: true
@@ -13,17 +13,13 @@ export var CopyToClipboardProps = {
   }
 };
 
-var CopyToClipboard = {
+const CopyToClipboard = {
   name: 'VueCopyToClipboard',
   functional: true,
   props: CopyToClipboardProps,
-  render: function (h, ctx) {
-    var props = ctx.props,
-        listeners = ctx.listeners,
-        children = ctx.children;
-    var text = props.text,
-        options = props.options || {};
-    var onCopy = listeners.copy
+  render (h, ctx) {
+    const { props, listeners: { copy: onCopy }, children } = ctx
+    const { text, options } = props || {}
 
     function handleClick(e) {
       // Bypass onClick if it was present
