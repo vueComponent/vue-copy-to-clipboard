@@ -2,7 +2,7 @@
   "name": "vue-copy-to-clipboard",
   "version": "1.0.2",
   "description": "Copy to clipboard Vue component",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": "https://github.com/vueComponent/vue-copy-to-clipboard",
   "author": "Sendya <18x@loacg.com>",
   "contributors": [
@@ -12,12 +12,22 @@
   "files": [
     "es",
     "lib",
-    "index.js"
+    "src/index.js"
   ],
+  "scripts": {
+    "build": "babel src/index.js -d lib"
+  },
   "peerDependencies": {
     "vue": ">=2.6.0"
   },
   "dependencies": {
     "copy-to-clipboard": "^3.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^4.43.0"
   }
 }
